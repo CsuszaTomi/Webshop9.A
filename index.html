@@ -54,7 +54,7 @@
               </div>
               <div class="dropdown float-right">
                 <label class="mr-2">Laponként:</label>
-                <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">9 <span class="caret"></span></a>
+                <a class="btn btn-lg btn-light dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Összes <span class="caret"></span></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" x-placement="bottom-end" style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
                   <a class="dropdown-item" href="#">Összes</a>
                   <a class="dropdown-item" href="#">6</a>
@@ -286,7 +286,7 @@
           </div>
         </div>
       </div><div class="col-md-4 order-md-1 col-lg-3 sidebar-filter">
-        <h3 class="mt-0 mb-5">Termékek <span class="text-primary">12</span></h3>
+        <h3 class="mt-0 mb-5">Termékek <span class="text-primary">13</span></h3>
         <h6 class="text-uppercase font-weight-bold mb-3">Kategóriák</h6>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
@@ -367,10 +367,12 @@
     $(document).ready(function(){
       
     // Alapértelmezett lapok száma
-    var defaultPerPage = 9;
+    var defaultPerPage = 13;
 
     // Kártyák számának beállítása az alapértelmezett értékre
     var perPage = defaultPerPage;
+
+    updateDisplayedCards();
 
     // Az oldalonkénti kártyák számának megváltoztatása
     $('.dropdown-menu a.dropdown-item').click(function(){
