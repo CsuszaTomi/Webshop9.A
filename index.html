@@ -193,7 +193,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Laptop">
+            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Laptop 500">
               <div class="card h-100 border-0">
                 <div class="card-img-top">
                   <img src="rtx.png" class="img-fluid mx-auto d-block" alt="Card image cap">
@@ -209,7 +209,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Laptop">
+            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Laptop 100-500">
               <div class="card h-100 border-0">
                 <div class="card-img-top">
                   <img src="rtx.png" class="img-fluid mx-auto d-block" alt="Card image cap">
@@ -225,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Telefonok">
+            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category Telefonok 50-100">
               <div class="card h-100 border-0">
                 <div class="card-img-top">
                   <img src="rtx.png" class="img-fluid mx-auto d-block" alt="Card image cap">
@@ -241,7 +241,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category gpu">
+            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category gpu 20-50">
               <div class="card h-100 border-0">
                 <div class="card-img-top">
                   <img src="rtx.png" class="img-fluid mx-auto d-block" alt="Card image cap">
@@ -257,7 +257,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category ssd">
+            <div class="col-6 col-md-6 col-lg-4 mb-3 card-category ssd 0-20">
               <div class="card h-100 border-0">
                 <div class="card-img-top">
                   <img src="rtx.png" class="img-fluid mx-auto d-block" alt="Card image cap">
@@ -341,32 +341,32 @@
         <h6 class="text-uppercase mt-5 mb-3 font-weight-bold">Ár</h6>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="filter-size-1">
-            <label class="custom-control-label" for="filter-size-1">0-20.000FT</label>
+            <input type="checkbox" class="custom-control-input" id="category-0-20">
+            <label class="custom-control-label" for="category-0-20">0-20.000FT</label>
           </div>
         </div>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="filter-size-2">
-            <label class="custom-control-label" for="filter-size-2">20.000-50.000FT</label>
+            <input type="checkbox" class="custom-control-input" id="category-20-50">
+            <label class="custom-control-label" for="category-20-50">20.000-50.000FT</label>
           </div>
         </div>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="filter-size-3">
-            <label class="custom-control-label" for="filter-size-3">50.000-100.000FT</label>
+            <input type="checkbox" class="custom-control-input" id="category-50-100">
+            <label class="custom-control-label" for="category-50-100">50.000-100.000FT</label>
           </div>
         </div>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="filter-size-4">
-            <label class="custom-control-label" for="filter-size-4">100.000-500.000FT</label>
+            <input type="checkbox" class="custom-control-input" id="category-100-500">
+            <label class="custom-control-label" for="category-100-500">100.000-500.000FT</label>
           </div>
         </div>
         <div class="mt-2 mb-2 pl-2">
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="filter-size-5">
-            <label class="custom-control-label" for="filter-size-5">500.000FT-</label>
+            <input type="checkbox" class="custom-control-input" id="category-500">
+            <label class="custom-control-label" for="category-500">500.000FT-</label>
           </div>
         </div>
         <div class="divider mt-5 mb-5 border-bottom border-secondary"></div>
@@ -462,6 +462,51 @@
             if(this.checked) {
                 $('.card-category:not(.ssd)').hide();
                 $('.card-category.ssd').show();
+            } else {
+              updateDisplayedCards();
+            }
+        });
+
+        $('#category-0-20').change(function(){
+            if(this.checked) {
+                $('.card-category:not(.0-20)').hide();
+                $('.card-category.0-20').show();
+            } else {
+              updateDisplayedCards();
+            }
+        });
+
+        $('#category-20-50').change(function(){
+            if(this.checked) {
+                $('.card-category:not(.20-50)').hide();
+                $('.card-category.20-50').show();
+            } else {
+              updateDisplayedCards();
+            }
+        });
+
+        $('#category-50-100').change(function(){
+            if(this.checked) {
+                $('.card-category:not(.50-100)').hide();
+                $('.card-category.50-100').show();
+            } else {
+              updateDisplayedCards();
+            }
+        });
+
+        $('#category-100-500').change(function(){
+            if(this.checked) {
+                $('.card-category:not(.100-500)').hide();
+                $('.card-category.100-500').show();
+            } else {
+              updateDisplayedCards();
+            }
+        });
+
+        $('#category-500').change(function(){
+            if(this.checked) {
+                $('.card-category:not(.500)').hide();
+                $('.card-category.500').show();
             } else {
               updateDisplayedCards();
             }
